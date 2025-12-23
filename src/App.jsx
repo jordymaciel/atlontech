@@ -84,7 +84,7 @@ const Navbar = () => {
               </a>
             ))}
             <a 
-              href="mailto:jordymacieljm@gmail.com"
+              href="mailto:atlontechnologies@gmail.com"
               className="bg-white text-black px-6 py-2 rounded-full text-xs font-bold hover:bg-neutral-200 transition-all"
             >
               Consultar Especialista
@@ -277,7 +277,7 @@ const App = () => {
               <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-white/5 blur-[100px] rounded-full" />
               <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight">Sua visão merece <br /> uma arquitetura nativa.</h2>
               <a 
-                href="mailto:jordymacieljm@gmail.com"
+                href="mailto:atlontechnologies@gmail.com"
                 className="px-14 py-6 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl inline-block"
               >
                 Começar a Construir
@@ -300,8 +300,8 @@ const App = () => {
           <div className="flex flex-wrap gap-12">
             <div>
               <p className="text-[10px] uppercase tracking-widest text-white/30 mb-4">Contato</p>
-              <a href="mailto:jordymacieljm@gmail.com" className="text-sm hover:text-white transition-colors cursor-pointer">
-                jordymacieljm@gmail.com
+              <a href="mailto:atlontechnologies@gmail.com" className="text-sm hover:text-white transition-colors cursor-pointer">
+                atlontechnologies@gmail.com
               </a>
             </div>
             <div>
