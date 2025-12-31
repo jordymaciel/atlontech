@@ -353,7 +353,7 @@ const App = () => {
             <h2 className="text-6xl md:text-[10rem] font-bold tracking-tighter text-white/5 mb-[-2rem] select-none">MANIFESTO</h2>
             <div className="max-w-3xl mx-auto relative">
               <p className="text-2xl md:text-4xl font-light leading-snug">
-                Desenvolvemos software sob contexto, não por padrão<br /> 
+                Desenvolvemos software sob contexto, e não por padrão. <br /> 
                 <span className="text-white font-bold italic underline decoration-zinc-700 underline-offset-8">exclusivamente para você</span>. 
                 Se é genérico, não é Atlon."
               </p>
@@ -403,7 +403,8 @@ const App = () => {
             </div>
             <div>
               <p className="text-[10px] uppercase tracking-widest text-white/30 mb-4">Social</p>
-              <a href={instagram} target="_blank" className="text-sm hover:text-white transition-colors cursor-pointer">Instagram</a>
+                <a href={instagram} target="_blank" className="p-4 rounded-full border border-white/10 hover:bg-white/5 transition-colors"><Instagram /></a>
+                <a href={whatsapp} target="_blank" className="p-4 rounded-full border border-white/10 hover:bg-white/5 transition-colors"><MessageCircle /></a>
             </div>
           </div>
         </div>
