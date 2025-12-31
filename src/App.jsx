@@ -337,6 +337,24 @@ const App = () => {
         ::-webkit-scrollbar-thumb:hover {
           background: #444;
         }
+        @keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, 30px); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -20px); }
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 10px #CC9900); }
+  50% { opacity: 1; filter: drop-shadow(0 0 30px #CC9900); }
+}
+
+.animate-float { animation: float 10s ease-in-out infinite; }
+.animate-float-delayed { animation: float-delayed 12s ease-in-out infinite; }
+.animate-glow { animation: glow 4s ease-in-out infinite; }
       `}} />
     </div>
   );
