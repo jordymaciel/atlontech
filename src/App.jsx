@@ -10,7 +10,11 @@ import {
   X,
   Code2,
   Cpu,
-  Layers
+  Layers,
+  Sparkles,
+  Instagram,
+  MessageCircle,
+  Layout
 } from 'lucide-react';
 
 // Componente para revelar elementos ao rolar (Scroll Reveal)
@@ -24,8 +28,10 @@ const ScrollReveal = ({ children, className = "" }) => {
     }, { threshold: 0.1 });
     
     const { current } = domRef;
-    observer.observe(current);
-    return () => observer.unobserve(current);
+    if (current) observer.observe(current);
+    return () => {
+      if (current) observer.unobserve(current);
+    };
   }, []);
 
   return (
@@ -66,6 +72,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const email = "atlontechnologies@gmail.com";
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'py-4' : 'py-8'}`}>
       <div className={`mx-auto max-w-5xl px-6 rounded-full transition-all duration-500 ${
@@ -78,13 +86,13 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-10">
-            {['Processo', 'Soluções', 'Manifesto'].map((item) => (
+            {['Processo', 'IA', 'Soluções', 'Manifesto'].map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`} className="text-[11px] uppercase tracking-widest font-medium text-white/50 hover:text-white transition-colors">
                 {item}
               </a>
             ))}
             <a 
-              href="mailto:atlontechnologies@gmail.com"
+              href={`mailto:${email}`}
               className="bg-white text-black px-6 py-2 rounded-full text-xs font-bold hover:bg-neutral-200 transition-all"
             >
               Consultar Especialista
@@ -126,6 +134,10 @@ const App = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  const email = "atlontechnologies@gmail.com";
+  const whatsapp = "https://wa.me/5587981739862";
+  const instagram = "https://www.instagram.com/atlon_tech/";
+
   return (
     <div className="min-h-screen bg-[#000] text-white selection:bg-white/20 font-sans overflow-x-hidden">
       {/* Background Parallax Orbs */}
@@ -161,7 +173,7 @@ const App = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a 
-                href="mailto:jordymacieljm@gmail.com"
+                href={`mailto:${email}`}
                 className="px-10 py-4 bg-white text-black rounded-full font-bold text-sm hover:scale-105 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] inline-flex items-center"
               >
                 Projetar meu App
@@ -231,6 +243,85 @@ const App = () => {
           </div>
         </section>
 
+        {/* NOVA SESSÃO: IA (AMARELO QUEIMADO FUTURISTA) */}
+        <section id="ia" className="py-40 px-6 relative overflow-hidden">
+          {/* Futuristic Glowing Background Effect */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(204,153,0,0.15)_0%,transparent_60%)] animate-pulse" />
+            <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-[#CC9900]/10 blur-[120px] rounded-full animate-float opacity-40" />
+            <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-[#8B6508]/20 blur-[100px] rounded-full animate-float-delayed opacity-30" />
+          </div>
+
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center relative z-10">
+            <ScrollReveal>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#CC9900]/10 border border-[#CC9900]/30 mb-6 backdrop-blur-md">
+                <Sparkles size={14} className="text-[#CC9900]" />
+                <span className="text-[10px] uppercase tracking-widest text-[#CC9900]">Inteligência Avançada</span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold mb-8">IA que não apenas responde, <span className="italic text-neutral-500">mas opera.</span></h2>
+              <p className="text-lg text-white/40 leading-relaxed mb-8">
+                Desenvolvemos software sob contexto, não por padrão. Integramos inteligência preditiva que antecipa gargalos operacionais antes mesmo de acontecerem.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl">
+                  <p className="text-[#CC9900] font-bold mb-1 text-xs tracking-widest uppercase">Eficácia</p>
+                  <p className="text-white/40 text-sm italic">Redução de ruído analítico.</p>
+                </div>
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl">
+                  <p className="text-[#CC9900] font-bold mb-1 text-xs tracking-widest uppercase">Precisão</p>
+                  <p className="text-white/40 text-sm italic">Foco total em ROI.</p>
+                </div>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal className="relative flex items-center justify-center">
+              <div className="w-80 h-80 relative">
+                <div className="absolute inset-0 bg-[#CC9900] opacity-10 blur-[100px] rounded-full animate-pulse" />
+                <div className="relative z-10 aspect-square rounded-[3rem] bg-zinc-900/50 border border-[#CC9900]/20 backdrop-blur-3xl p-12 flex items-center justify-center shadow-[0_0_50px_rgba(204,153,0,0.1)]">
+                   <Cpu size={100} className="text-[#CC9900]/60 animate-glow" />
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* NOVA SESSÃO: CUSTOMIZAÇÃO */}
+        <section id="customização" className="py-40 px-6">
+          <div className="max-w-6xl mx-auto text-center mb-24">
+            <ScrollReveal>
+              <h2 className="text-4xl md:text-7xl font-bold mb-10 tracking-tighter italic text-white">Customização sem Limites.</h2>
+              <p className="text-xl text-neutral-500 max-w-2xl mx-auto font-light">Visões fortes pedem bases sólidas. Não criamos apenas sites; criamos ecossistemas de alta conversão.</p>
+            </ScrollReveal>
+          </div>
+          
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            <ScrollReveal className="p-12 rounded-[4rem] bg-white/[0.02] border border-white/10 backdrop-blur-3xl hover:bg-white/[0.05] transition-all group overflow-hidden relative">
+               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-125 transition-transform duration-1000">
+                  <Layout size={120} />
+               </div>
+               <h3 className="text-3xl font-bold mb-6">Landing Pages <br/> de Alta Performance</h3>
+               <p className="text-white/40 leading-relaxed mb-8 max-w-md">
+                 Sites institucionais e páginas de vendas focadas em experiência do utilizador e carregamento instantâneo. Design minimalista com foco total em conversão.
+               </p>
+               <a href={`mailto:${email}`} className="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-white hover:gap-4 transition-all">
+                 Projetar Landing Page <ArrowRight size={16} />
+               </a>
+            </ScrollReveal>
+
+            <ScrollReveal className="p-12 rounded-[4rem] bg-white/[0.02] border border-white/10 backdrop-blur-3xl hover:bg-white/[0.05] transition-all group overflow-hidden relative">
+               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-125 transition-transform duration-1000">
+                  <Smartphone size={120} />
+               </div>
+               <h3 className="text-3xl font-bold mb-6">Apps Nativo <br/> Customizados</h3>
+               <p className="text-white/40 leading-relaxed mb-8 max-w-md">
+                 Sistemas de gestão nativos ajustados à sua operação. Não adaptamos o seu negócio ao software; o software nasce da sua rotina.
+               </p>
+               <a href={`mailto:${email}`} className="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-white hover:gap-4 transition-all">
+                 Construir App <ArrowRight size={16} />
+               </a>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* Liquid Glass Showcase */}
         <section className="py-40 relative">
           <div className="absolute inset-0 bg-white/[0.02] -skew-y-3" />
@@ -276,12 +367,18 @@ const App = () => {
             <div className="max-w-5xl mx-auto rounded-[5rem] bg-zinc-900/50 border border-white/10 p-20 text-center relative overflow-hidden backdrop-blur-3xl">
               <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-white/5 blur-[100px] rounded-full" />
               <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight">Visões fortes <br /> pedem arquitetura de base forte</h2>
-              <a 
-                href="mailto:atlontechnologies@gmail.com"
-                className="px-14 py-6 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl inline-block"
-              >
-                Começar a Construir
-              </a>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                <a 
+                  href={`mailto:${email}`}
+                  className="px-14 py-6 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl inline-block"
+                >
+                  Começar a Construir
+                </a>
+                <div className="flex gap-6">
+                  <a href={instagram} target="_blank" className="p-4 rounded-full border border-white/10 hover:bg-white/5 transition-colors"><Instagram /></a>
+                  <a href={whatsapp} target="_blank" className="p-4 rounded-full border border-white/10 hover:bg-white/5 transition-colors"><MessageCircle /></a>
+                </div>
+              </div>
             </div>
           </ScrollReveal>
         </section>
@@ -300,13 +397,13 @@ const App = () => {
           <div className="flex flex-wrap gap-12">
             <div>
               <p className="text-[10px] uppercase tracking-widest text-white/30 mb-4">Contato</p>
-              <a href="mailto:atlontechnologies@gmail.com" className="text-sm hover:text-white transition-colors cursor-pointer">
-                atlontechnologies@gmail.com
+              <a href={`mailto:${email}`} className="text-sm hover:text-white transition-colors cursor-pointer">
+                {email}
               </a>
             </div>
             <div>
               <p className="text-[10px] uppercase tracking-widest text-white/30 mb-4">Social</p>
-              <p className="text-sm hover:text-white transition-colors cursor-pointer">LinkedIn</p>
+              <a href={instagram} target="_blank" className="text-sm hover:text-white transition-colors cursor-pointer">Instagram</a>
             </div>
           </div>
         </div>
@@ -337,24 +434,25 @@ const App = () => {
         ::-webkit-scrollbar-thumb:hover {
           background: #444;
         }
+
         @keyframes float {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-20px, 30px); }
-}
+          0%, 100% { transform: translate(0, 0); }
+          50% { transform: translate(-20px, 30px); }
+        }
 
-@keyframes float-delayed {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(30px, -20px); }
-}
+        @keyframes float-delayed {
+          0%, 100% { transform: translate(0, 0); }
+          50% { transform: translate(30px, -20px); }
+        }
 
-@keyframes glow {
-  0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 10px #CC9900); }
-  50% { opacity: 1; filter: drop-shadow(0 0 30px #CC9900); }
-}
+        @keyframes glow {
+          0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 10px #CC9900); }
+          50% { opacity: 1; filter: drop-shadow(0 0 30px #CC9900); }
+        }
 
-.animate-float { animation: float 10s ease-in-out infinite; }
-.animate-float-delayed { animation: float-delayed 12s ease-in-out infinite; }
-.animate-glow { animation: glow 4s ease-in-out infinite; }
+        .animate-float { animation: float 10s ease-in-out infinite; }
+        .animate-float-delayed { animation: float-delayed 12s ease-in-out infinite; }
+        .animate-glow { animation: glow 4s ease-in-out infinite; }
       `}} />
     </div>
   );
