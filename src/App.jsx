@@ -147,16 +147,16 @@ const App = () => {
         <section className="min-h-screen flex flex-col items-center justify-center pt-20 px-6 text-center">
           <ScrollReveal>
             <div className="inline-block px-4 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-10">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-white/40">Bespoke Software Craftsmanship</span>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-white/40">Softwares personalizados</span>
             </div>
             
             <h1 className="text-5xl md:text-[7.5rem] font-bold tracking-tight mb-10 leading-[0.95] text-white">
-              Sistemas que <br /> não existem. <br />
+              Criamos sistemas que<br /> não existem. <br />
               <span className="text-neutral-500 italic font-light">Até agora.</span>
             </h1>
             
             <p className="max-w-xl mx-auto text-lg md:text-xl text-neutral-400 font-light leading-relaxed mb-16">
-              Construímos ecossistemas digitais nativos e exclusivos para empresas que exigem ferramentas tão únicas quanto seus processos.
+              Construímos ecossistemas exclusivos
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -262,7 +262,7 @@ const App = () => {
             <h2 className="text-6xl md:text-[10rem] font-bold tracking-tighter text-white/5 mb-[-2rem] select-none">MANIFESTO</h2>
             <div className="max-w-3xl mx-auto relative">
               <p className="text-2xl md:text-4xl font-light leading-snug">
-                "Não fazemos software para todos. Fazemos software <br /> 
+                Desenvolvemos software sob contexto, não por padrão<br /> 
                 <span className="text-white font-bold italic underline decoration-zinc-700 underline-offset-8">exclusivamente para você</span>. 
                 Se é genérico, não é Atlon."
               </p>
@@ -275,7 +275,7 @@ const App = () => {
           <ScrollReveal>
             <div className="max-w-5xl mx-auto rounded-[5rem] bg-zinc-900/50 border border-white/10 p-20 text-center relative overflow-hidden backdrop-blur-3xl">
               <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-white/5 blur-[100px] rounded-full" />
-              <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight">Sua visão merece <br /> uma arquitetura nativa.</h2>
+              <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight">Visões fortes <br /> pedem arquitetura de base forte</h2>
               <a 
                 href="mailto:atlontechnologies@gmail.com"
                 className="px-14 py-6 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl inline-block"
